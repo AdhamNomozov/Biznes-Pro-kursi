@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biznes PRO - Professional Biznes Mentorlik</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1A237E',secondary:'#2E7D32'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+}
+.accordion-item {
+overflow: hidden;
+transition: all 0.3s ease;
+}
+.accordion-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease;
+}
+.accordion-item.active .accordion-content {
+max-height: 500px;
+}
+.fade-in {
+opacity: 1;
+transform: translateY(0);
+transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.module-card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.module-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.btn-primary {
+transition: all 0.3s ease;
+box-shadow: 0 4px 6px -1px rgba(26, 35, 126, 0.1), 0 2px 4px -1px rgba(26, 35, 126, 0.06);
+}
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 15px -3px rgba(26, 35, 126, 0.1), 0 4px 6px -2px rgba(26, 35, 126, 0.05);
+}
+.count-item {
+counter-increment: count-item;
+}
+.count-item::before {
+content: counter(count-item);
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="text-primary font-['Pacifico'] text-2xl">Biznes Pro</a>
+<nav class="hidden md:flex space-x-8">
+<a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">Kurs haqida</a>
+<a href="#goals" class="text-gray-700 hover:text-primary font-medium transition-colors">Maqsadlar</a>
+<a href="#modules" class="text-gray-700 hover:text-primary font-medium transition-colors">Modullar</a>
+<a href="#benefits" class="text-gray-700 hover:text-primary font-medium transition-colors">Ustunliklar</a>
+<a href="#pricing" class="text-gray-700 hover:text-primary font-medium transition-colors">To'lov</a>
+</nav>
+<a href="#apply" class="hidden md:block bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Ariza topshiring</a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+<div class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full hidden" id="mobile-menu">
+<div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+<a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">Kurs haqida</a>
+<a href="#goals" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">Maqsadlar</a>
+<a href="#modules" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">Modullar</a>
+<a href="#benefits" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">Ustunliklar</a>
+<a href="#pricing" class="text-gray-700 hover:text-primary font-medium transition-colors py-2">To'lov</a>
+<a href="#apply" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors text-center whitespace-nowrap">Ariza topshiring</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-24 relative" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20business%20mentorship%20program%20with%20abstract%20blue%20and%20green%20gradient%20background%2C%20minimalist%20design%2C%20clean%20corporate%20style%2C%20business%20people%20in%20meeting%20room%2C%20blurred%20in%20background%2C%20light%20and%20airy%20atmosphere&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+<div class="container mx-auto px-4 py-24 relative z-10">
+<div class="w-full max-w-2xl fade-in">
+<h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Biznes PRO</h1>
+<p class="text-xl md:text-2xl text-white/90 mb-8">Biznesingizni keyingi bosqichga olib chiqing</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#apply" class="bg-white text-primary px-8 py-4 !rounded-button font-semibold hover:bg-gray-100 transition-colors text-center btn-primary whitespace-nowrap">Ariza topshiring</a>
+<a href="#about" class="bg-transparent border-2 border-white text-white px-8 py-4 !rounded-button font-semibold hover:bg-white/10 transition-colors text-center whitespace-nowrap">Batafsil ma'lumot</a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kurs haqida</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Biznes PRO - bu Termiz shahrida yirik tadbirkorlar uchun mo'ljallangan 12 oylik professional biznes mentorlik dasturi.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-calendar-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">12 oylik</h3>
+<p class="text-gray-600">Chuqur va to'liq mentorlik dasturi</p>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-team-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">15 ishtirokchi</h3>
+<p class="text-gray-600">Cheklangan joylar soni</p>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-time-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Oyiga 2 dars</h3>
+<p class="text-gray-600">Haftaning yakshanba kunlari 09:00–17:00</p>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-user-star-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Rahmatulla Mirzayev</h3>
+<p class="text-gray-600">Ko'p yillik tajribaga ega biznes mentor</p>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm text-center fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mx-auto mb-4">
+<i class="ri-computer-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Offline + Online</h3>
+<p class="text-gray-600">Video va maxsus platforma</p>
+</div>
+</div>
+<div class="mt-16 bg-gray-50 rounded-lg p-8 shadow-sm fade-in">
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
+<img src="https://static.readdy.ai/image/32b99dd0cf3053b1dcca3d91380984bb/23e4ad5910c38a0f9046f7f595789f7b.png" alt="Rahmatulla Mirzayev" class="w-full h-full object-cover">
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">Rahmatulla Mirzayev</h3>
+<p class="text-gray-600 mb-4">20+ yillik biznes va boshqaruv tajribasiga ega tadbirkor.
+EPA, PIT, Evita, Pollwon, CAMO kompaniyalarining Surxondaryodagi rasmiy hamkori. Romay brendi asoschisi. </p>
+<div class="flex gap-4">
+<a href="#" class="text-primary hover:text-primary/80 transition-colors flex items-center gap-2">
+<i class="ri-linkedin-box-fill ri-lg"></i>
+<span>LinkedIn</span>
+</a>
+<a href="#" class="text-primary hover:text-primary/80 transition-colors flex items-center gap-2">
+<i class="ri-instagram-line ri-lg"></i>
+<span>Instagram</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Goals Section -->
+<section id="goals" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kurs maqsadlari</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Biznes Pro dasturi sizga quyidagi asosiy ko'nikmalarni rivojlantirishga yordam beradi</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm flex items-start gap-4 fade-in">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0 mt-1">
+<i class="ri-brain-line ri-lg text-primary"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Strategik fikrlash</h3>
+<p class="text-gray-600">Biznesingiz uchun uzoq muddatli strategiyalarni ishlab chiqish va ularni amaliyotga tatbiq etish ko'nikmalarini o'rganasiz. Bozor tendensiyalarini tahlil qilish va raqobatchilar strategiyasini o'rganish orqali o'z biznesingiz uchun eng optimal yo'nalishni tanlashni o'rganasiz.</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm flex items-start gap-4 fade-in">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0 mt-1">
+<i class="ri-settings-line ri-lg text-primary"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Tizimlashtirish</h3>
+<p class="text-gray-600">Biznes jarayonlarini tizimlashtirish va avtomatlashtirish orqali kompaniyangiz samaradorligini oshirishni o'rganasiz. Barcha bo'limlar uchun aniq standartlar va protseduralar yaratish, hamda ularni nazorat qilish mexanizmlarini ishlab chiqasiz.</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm flex items-start gap-4 fade-in">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0 mt-1">
+<i class="ri-funds-line ri-lg text-primary"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Moliya va investor tayyorgarligi</h3>
+<p class="text-gray-600">Biznesingiz moliyaviy ko'rsatkichlarini to'g'ri tahlil qilish, investitsiya jalb qilish uchun zarur bo'lgan hujjatlarni tayyorlash va investorlar bilan muzokaralar olib borish ko'nikmalarini o'zlashtirasiz.</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm flex items-start gap-4 fade-in">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0 mt-1">
+<i class="ri-team-line ri-lg text-primary"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Jamoa va jarayonlarni boshqarish</h3>
+<p class="text-gray-600">Samarali jamoa tuzish, xodimlarni motivatsiya qilish va ularning salohiyatini to'liq ochib berish uchun zarur bo'lgan liderlik ko'nikmalarini rivojlantirasiz. Biznes jarayonlarini optimallashtirib, vaqt va resurslarni tejashni o'rganasiz.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Modules Section -->
+<section id="modules" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kurs modullar</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">12 oy davomida o'rganiladigan asosiy biznes yo'nalishlari</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 fade-in">
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-advertisement-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Marketing</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">Marketing strategiyasini ishlab chiqish, maqsadli auditoriyani aniqlash, mijoz oqimini shakllantirish, brending va reklama kampaniyalarini samarali tashkil etish. Raqamli marketing vositalari va ulardan foydalanish usullari. Mijozlar bilan munosabatlarni boshqarish tizimini yaratish.</p>
+</div>
+</div>
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-flow-chart ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Biznes modeli</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">Qiymat taklifi va uni shakllantirish, daromad oqimlarini diversifikatsiya qilish, xarajatlar tuzilmasini optimallashtirish. Biznes modelini testlash va takomillashtirish usullari. Raqobatchilar tahlili va bozordagi o'z o'rnini aniqlash.</p>
+</div>
+</div>
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-compass-3-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Strategiya</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">3 yillik yo'l xaritasini ishlab chiqish, SWOT tahlil, biznes rivojlanish strategiyasini belgilash. Strategik maqsadlarni aniqlash va ularga erishish yo'llarini rejalashtirish. Biznes kengaytirish va diversifikatsiya strategiyalari.</p>
+</div>
+</div>
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-settings-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Jarayonlar</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">SOP (standart operatsion protseduralar) yaratish, biznes jarayonlarini avtomatlashtirish, delegatsiya qilish mexanizmlarini joriy etish. Jarayonlarni optimallashtirib, samaradorlikni oshirish usullari. Biznesni masshtablash uchun zarur bo'lgan tizimlarni yaratish.</p>
+</div>
+</div>
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-money-dollar-circle-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Moliya</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">Cash flow boshqaruvi, rentabellikni oshirish usullari, moliyaviy rejalashtirish va byudjetlashtirish. Moliyaviy hisobotlarni tahlil qilish va ular asosida biznes qarorlar qabul qilish. Investitsiya jalb qilish uchun biznesni tayyorlash.</p>
+</div>
+</div>
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-user-settings-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">HR boshqaruvi</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">KPI tizimini joriy etish, samarali jamoa tuzish, lavozim yo'riqnomalarini ishlab chiqish, xodimlarni motivatsiya qilish usullari. Korporativ madaniyatni shakllantirish va rivojlantirish. Xodimlar salohiyatini to'liq ochib berish uchun zarur bo'lgan shart-sharoitlarni yaratish.</p>
+</div>
+</div>
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-shopping-cart-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Sotuv</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">CRM tizimini joriy etish, savdo voronkasini shakllantirish, mijozlarni ushlab qolish strategiyalarini ishlab chiqish. Sotuv jarayonlarini standartlashtirish va avtomatlashtirish. Sotuvchilar uchun samarali motivatsiya tizimini yaratish.</p>
+</div>
+</div>
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-file-search-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Audit</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">Ichki audit tizimini yaratish, nazorat mexanizmlarini joriy etish, risklarni boshqarish. Biznes jarayonlarini muntazam ravishda tekshirib, kamchiliklarni aniqlash va bartaraf etish usullari. Moliyaviy, operatsion va strategik auditni o'tkazish.</p>
+</div>
+</div>
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-shake-hands-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Sheriklik</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">Sheriklar bilan shartnomalar tuzish, sheriklik munosabatlarini to'g'ri yo'lga qo'yish, chiqish mexanizmlarini oldindan belgilash. Strategik hamkorliklar orqali biznesni rivojlantirish usullari. Sheriklik munosabatlarida yuzaga kelishi mumkin bo'lgan muammolarni hal qilish.</p>
+</div>
+</div>
+<div class="accordion-item bg-gray-50 rounded-lg overflow-hidden">
+<div class="p-6 flex justify-between items-center cursor-pointer accordion-header">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-shield-cross-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900">Antikrizis</h3>
+</div>
+<div class="w-6 h-6 flex items-center justify-center text-primary accordion-icon">
+<i class="ri-add-line ri-lg"></i>
+</div>
+</div>
+<div class="accordion-content px-6 pb-6">
+<p class="text-gray-600 pl-14">Stress rejalar ishlab chiqish, sektor tahlilini o'tkazish, pivot strategiyasini qo'llash. Krizis vaziyatlarida biznesni saqlab qolish va rivojlantirish usullari. Moliyaviy qiyinchiliklar davrida biznes barqarorligini ta'minlash uchun zarur bo'lgan choralarni ko'rish.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section id="benefits" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kurs ustunliklari</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Biznes PRO dasturining boshqa kurslardan farqli jihatlari</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-sm fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-discuss-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Mastermind sessiyalar</h3>
+<p class="text-gray-600">Har darsda o'tkaziladigan mastermind sessiyalarda ishtirokchilar o'z biznes muammolarini jamoa bilan muhokama qilib, turli nuqtai nazardan yechimlar topishadi.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-focus-3-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Hot Seat tahlil</h3>
+<p class="text-gray-600">Har bir ishtirokchi uchun maxsus ajratilgan vaqtda uning biznesi chuqur tahlil qilinadi va rivojlanish uchun aniq tavsiyalar beriladi.
+ (Biznes razbor formatida)</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-presentation-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Investorlar tayyorgarligi</h3>
+<p class="text-gray-600">Siz biznesingizga investitsiya jalb qilish uchun zarur bo‘lgan barcha materiallar – moliyaviy model, pitch deck, prezentatsiya va savol-javoblar bo‘yicha tayyorgarlikdan o‘tasiz. Har bir ishtirokchi investor bilan professional muloqotga tayyor bo‘ladi.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-funds-box-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Indeksli o'sish monitoringi</h3>
+<p class="text-gray-600">Kurs davomida har bir ishtirokchining biznesidagi o‘sish, o‘zgarish va natijalar bo‘yicha shaxsiy monitoring tizimi yuritiladi. Bu sizga o‘z taraqqiyotingizni aniq ko‘rish, baholash va har oyda real tahlil olish imkonini beradi.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-global-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Ekskursiyalar va xalqaro spikerlar</h3>
+<p class="text-gray-600">Kurs davomida muvaffaqiyatli kompaniyalarga ekskursiyalar va xalqaro biznes ekspertlari bilan onlayn uchrashuvlar tashkil etiladi.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm fade-in module-card">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-book-open-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Onlayn platforma va kutubxona</h3>
+<p class="text-gray-600">Maxsus yaratilgan onlayn platformada barcha dars materiallari, qo'shimcha manbalar va foydali adabiyotlar jamlanadi.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section id="pricing" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16 fade-in">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">To'lov va kafolat</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Biznes PRO dasturida ishtirok etish shartlari</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm fade-in">
+<div class="p-8 md:p-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-2">12 oylik to'liq mentorlik dasturi</h3>
+<p class="text-gray-600">Barcha modullar, materiallar va qo'shimcha imkoniyatlar bilan</p>
+</div>
+<div class="bg-primary text-white px-6 py-3 rounded-full text-xl font-bold">$2,000/oy</div>
+</div>
+<div class="border-t border-gray-200 pt-8">
+<h4 class="text-xl font-semibold text-gray-900 mb-4">Kursga kiritilgan:</h4>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-600">24 ta offline dars (oyiga 2 marta, 8 soatdan)</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-600">24 ta mastermind sessiya (oyiga 2 marta)</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-600">4 ta Hot Seat tahlil (har bir ishtirokchi uchun)</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-600">Onlayn platformaga cheksiz kirish huquqi</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-600">Mentor bilan shaxsiy konsultatsiyalar (oyiga 2 soat)</span>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<span class="text-gray-600">Demo Day tadbiri va investorlar bilan tanishish imkoniyati</span>
+</li>
+</ul>
+</div>
+<div class="border-t border-gray-200 pt-8 mt-8">
+<div class="flex items-start gap-4 bg-secondary/10 p-4 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary/20 rounded-full flex-shrink-0">
+<i class="ri-shield-check-line ri-lg text-secondary"></i>
+</div>
+<div>
+<h4 class="text-xl font-semibold text-gray-900 mb-2">100% natijaga kafolat</h4>
+<p class="text-gray-600">Agar kurs davomida belgilangan maqsadlarga erishilmasa va biznesingizda sezilarli o'sish kuzatilmasa, to'langan summani to'liq qaytarib beramiz.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-100 p-8 md:p-12 text-center">
+<p class="text-gray-600 mb-6">Kursda joylar cheklangan. Hoziroq ariza topshiring!</p>
+<a href="#apply" class="inline-block bg-primary text-white px-8 py-4 !rounded-button font-semibold hover:bg-primary/90 transition-colors btn-primary whitespace-nowrap">Ariza topshiring</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section id="apply" class="py-20 bg-primary text-white">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center fade-in">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Biznesingiz o'sishga tayyormi?</h2>
+<p class="text-xl text-white/90 mb-10">Biznes PRO dasturi orqali biznesingizni keyingi bosqichga olib chiqing va muvaffaqiyatga erishish yo'lida professional ko'mak oling.</p>
+<div class="bg-white rounded-lg p-8 md:p-10 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Ariza topshirish</h3>
+<form action="https://docs.google.com/forms/d/e/your-form-id/formResponse" method="POST" target="_blank" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Ism familiya</label>
+<input type="text" id="name" name="entry.1" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 focus:outline-none text-gray-900" required>
+</div>
+<div>
+<label for="company" class="block text-sm font-medium text-gray-700 mb-1">Kompaniya nomi</label>
+<input type="text" id="company" name="entry.2" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 focus:outline-none text-gray-900" required>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon raqam</label>
+<input type="tel" id="phone" name="entry.3" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 focus:outline-none text-gray-900" required>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+<input type="email" id="email" name="entry.4" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 focus:outline-none text-gray-900" required>
+</div>
+</div>
+<div>
+<label for="business_type" class="block text-sm font-medium text-gray-700 mb-1">Biznes yo'nalishi</label>
+<select id="business_type" name="entry.5" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 focus:outline-none text-gray-900 pr-8" required>
+<option value="" disabled selected>Tanlang</option>
+<option value="retail">Chakana savdo</option>
+<option value="production">Ishlab chiqarish</option>
+<option value="services">Xizmat ko'rsatish</option>
+<option value="it">IT va dasturiy ta'minot</option>
+<option value="restaurant">Restoran va oziq-ovqat</option>
+<option value="construction">Qurilish</option>
+<option value="other">Boshqa</option>
+</select>
+</div>
+<div>
+<label for="goal" class="block text-sm font-medium text-gray-700 mb-1">Kursdan kutayotgan asosiy natija</label>
+<textarea id="goal" name="entry.6" rows="4" class="w-full px-4 py-3 rounded border-gray-300 border focus:border-primary focus:ring focus:ring-primary/20 focus:outline-none text-gray-900" required></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-4 !rounded-button font-semibold hover:bg-primary/90 transition-colors btn-primary whitespace-nowrap">Arizani yuborish</button>
+</form>
+</div>
+<div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-8">
+<a href="tel:+998901234567" class="flex items-center gap-3 text-white/90 hover:text-white transition-colors">
+<div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<span>+998 90 746 22 00</span>
+</a>
+<a href="https://t.me/biznespromentor" target="_blank" class="flex items-center gap-3 text-white/90 hover:text-white transition-colors">
+<div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full">
+<i class="ri-telegram-line ri-lg"></i>
+</div>
+<span>@biznespromentor</span>
+</a>
+<a href="https://instagram.com/biznespro" target="_blank" class="flex items-center gap-3 text-white/90 hover:text-white transition-colors">
+<div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full">
+<i class="ri-instagram-line ri-lg"></i>
+</div>
+<span>@biznespro</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<a href="#" class="text-white font-['Pacifico'] text-2xl">Biznes PRO</a>
+<p class="text-gray-400 mt-2">© 2025 Biznes PRO. Barcha huquqlar himoyalangan.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-6 md:gap-12">
+<a href="#about" class="text-gray-400 hover:text-white transition-colors">Kurs haqida</a>
+<a href="#modules" class="text-gray-400 hover:text-white transition-colors">Modullar</a>
+<a href="#benefits" class="text-gray-400 hover:text-white transition-colors">Ustunliklar</a>
+<a href="#pricing" class="text-gray-400 hover:text-white transition-colors">To'lov</a>
+<a href="#apply" class="text-gray-400 hover:text-white transition-colors">Ariza topshirish</a>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+<p>Termiz shahri, Romay biznes klubi</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+});
+// Logo click handler for smooth scroll to top
+document.querySelector('.font-\\[\'Pacifico\'\\]').addEventListener('click', function(e) {
+e.preventDefault();
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+// Accordion functionality
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+accordionHeaders.forEach(header => {
+header.addEventListener('click', function() {
+const accordionItem = this.parentElement;
+const accordionContent = accordionItem.querySelector('.accordion-content');
+const accordionIcon = accordionItem.querySelector('.accordion-icon i');
+accordionItem.classList.toggle('active');
+if (accordionItem.classList.contains('active')) {
+accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+accordionIcon.classList.replace('ri-add-line', 'ri-subtract-line');
+} else {
+accordionContent.style.maxHeight = '0';
+accordionIcon.classList.replace('ri-subtract-line', 'ri-add-line');
+}
+});
+});
+// Scroll animation
+const fadeElements = document.querySelectorAll('.fade-in');
+const fadeInOnScroll = function() {
+fadeElements.forEach(element => {
+element.classList.add('visible');
+});
+};
+fadeInOnScroll(); // Show all elements immediately
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+// Close mobile menu if open
+if (!mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.add('hidden');
+}
+}
+});
+});
+});
+</script>
+</body>
+</html>
